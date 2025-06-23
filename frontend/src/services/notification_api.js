@@ -1,5 +1,6 @@
 import axios from 'axios' ;
 import { Platform } from 'react-native';
+import BASE_URL from './config';
 
 //import notifications from '../../../backend/models/notifications';
 // const BASE_URL = "http://10.0.2.2:5001/api/notifications" ;
@@ -8,9 +9,11 @@ import { Platform } from 'react-native';
 //     ? 'http://localhost:5001/api/notifications' 
 //     : 'http://10.0.2.2:5001/api/notifications';
 
-const API_URL = Platform.OS === 'ios' 
-    ? 'http://localhost:5001/api/notifications' 
-    : 'http://192.168.208.220:5001/api/notifications';
+// const API_URL = Platform.OS === 'ios' 
+//     ? 'http://localhost:5001/api/notifications' 
+//     : 'http://192.168.208.220:5001/api/notifications';
+
+const API_URL = `${BASE_URL}/notifications` ;
 
 export const fetchUserNotifications = async (userId) => {
     console.log("In notification api page") ;

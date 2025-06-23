@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Platform } from 'react-native';
+import BASE_URL from "./config";
 
 // const API_URL = "http://10.0.2.2:5001/api/projects"; // Emulator only
 
@@ -13,9 +14,11 @@ import { Platform } from 'react-native';
 //     : 'http://192.168.0.101:5001/api/projects';
 
 
-const API_URL = Platform.OS === 'ios' 
-    ? 'http://localhost:5001/api/projects' 
-    : 'http://192.168.208.220:5001/api/projects';
+// const API_URL = Platform.OS === 'ios' 
+//     ? 'http://localhost:5001/api/projects' 
+//     : 'http://192.168.208.220:5001/api/projects';
+
+const API_URL = `${BASE_URL}/projects` ;
 
 
 export const addProject = async (userId, projectData) => {
